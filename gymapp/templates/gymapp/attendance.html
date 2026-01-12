@@ -1,0 +1,36 @@
+{% extends 'gymapp/base.html' %}
+{% block title %}Attendance{% endblock %}
+{% block content %}
+
+<h2 class="mb-4 text-center">Attendance Records</h2>
+
+<table class="table table-bordered table-striped shadow-sm">
+  <thead class="table-dark">
+    <tr>
+      <th>#</th>
+      <th>Member</th>
+      <th>Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for att in attendance %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ att.member.name }}</td>
+      <td>{{ att.date }}</td>
+      <td>
+        {% if att.status == "Present" %}
+          <span class="badge bg-success">Present</span>
+        {% else %}
+          <span class="badge bg-danger">Absent</span>
+        {% endif %}
+      </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="4" class="text-center">No attendance records</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

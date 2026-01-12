@@ -1,0 +1,31 @@
+{% extends 'gymapp/base.html' %}
+{% block title %}Add Member{% endblock %}
+{% block content %}
+
+<div class="card shadow-lg p-4">
+  <h3 class="mb-4 text-center">Add New Member</h3>
+  <form method="POST" class="row g-3">
+    {% csrf_token %}
+    <div class="col-md-6">
+      <label class="form-label">Full Name</label>
+      <input type="text" name="name" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Email</label>
+      <input type="email" name="email" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Phone</label>
+      <input type="text" name="phone" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Membership Type</label>
+      <input type="text" name="membership" class="form-control" required>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary mt-3 px-5">Add Member</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,45 +1,42 @@
 {% extends 'gymapp/base.html' %}
 {% load static %}
-
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
 <style>
-body {
-  background: url("{% static 'img/gym.jpg' %}") no-repeat center center fixed;
-  background-size: cover;
-  font-family: 'Poppins', sans-serif;
-}
-#heading{
-    font-family: monospace;
-    font-size: 50px;
-}
+  body{
+    background: url("{% static 'img/gym.jpg' %}") no-repeat center/cover fixed;
+  }
 </style>
 
-<h2 class="mb-4 text-center fw-bold text-light" id="heading">Dashboard <span style="color: red;">Overview</span></h2>
+<h2 class="text-center fw-bold text-light mb-4">
+  Dashboard <span class="text-danger">Overview</span>
+</h2>
 
-<div class="row g-4 text-center">
-  <div class="col-md-4">
-    <div class="card shadow border-0 bg-primary text-white">
+<div class="row g-3 text-center">
+  <div class="col-md-4 col-sm-12">
+    <div class="card bg-primary text-white shadow">
       <div class="card-body">
         <h3>{{ members }}</h3>
         <p>Total Members</p>
       </div>
     </div>
   </div>
-  <div class="col-md-4">
-    <div class="card shadow border-0 bg-success text-white">
+
+  <div class="col-md-4 col-sm-12">
+    <div class="card bg-success text-white shadow">
       <div class="card-body">
         <h3>{{ payments }}</h3>
         <p>Total Payments</p>
       </div>
     </div>
   </div>
-  <div class="col-md-4">
-    <div class="card shadow border-0 bg-warning text-white">
+
+  <div class="col-md-4 col-sm-12">
+    <div class="card bg-warning text-white shadow">
       <div class="card-body">
         <h3>{{ attendance }}</h3>
-        <p>Total Attendance Records</p>
+        <p>Total Attendance</p>
       </div>
     </div>
   </div>
